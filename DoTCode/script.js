@@ -4,6 +4,11 @@ document.getElementById("getStartedBtn").addEventListener("click", (e) => {
   displayCourseCards(); // Show course content immediately
 });
 
+document.querySelector(".course").addEventListener("click",(e)=>{
+  e.preventDefault();
+  displayCourseCards();
+})
+
 // Function to Display Course Cards
 function displayCourseCards() {
   const courseGrid = document.getElementById("courseGrid");
@@ -65,3 +70,13 @@ function openMenu() {
 function closeMenu() {
   document.getElementById("overlay").style.display = "none";
 }
+
+
+const form = document.querySelector('form');
+  const successMessage = document.getElementById('thank-you-message');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the form from refreshing the page
+    form.reset(); // Reset the form after submission
+    successMessage.style.display = 'block'; // Show the success message
+  });
